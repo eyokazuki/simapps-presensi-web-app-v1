@@ -1,0 +1,3 @@
+height: <?= count($dataKehadiranBulanan) > 14 ? count($dataKehadiranBulanan) * 20 : 350 ?>,
+height: <?= count($dataKesehatanBulanan) > 14 ? count($dataKesehatanBulanan) * 20 : 350 ?>,
+height: <?= count($dataAbsenBulanan) > 14 ? count($dataAbsenBulanan) * 20 : 350 ?>,
