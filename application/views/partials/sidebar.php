@@ -29,6 +29,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <ul class="menu-inner py-1">
         <li class='menu-item nav-menu'>
             <a class='menu-link ' href='https://job-simenggaris.com/workspace'>
+                <!-- <a class='menu-link ' href='https://simapps-workspace.test/workspace'> -->
                 <i class='menu-icon tf-icons ti ti-arrow-left'></i>
                 <div data-i18n='Main Menu'>Main Menu</div>
             </a>
