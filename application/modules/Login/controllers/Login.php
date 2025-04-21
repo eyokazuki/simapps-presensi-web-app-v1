@@ -17,8 +17,9 @@ class Login extends CI_Controller
 
 	public function index()
 	{
-		$data 	= $this->auth->getTitle();
-		$this->load->view('login_v', $data);
+		return redirect("https://simapps-workspace.test/workspace");
+		// $data 	= $this->auth->getTitle();
+		// $this->load->view('login_v', $data);
 	}
 
 	public function action()
@@ -73,11 +74,17 @@ class Login extends CI_Controller
 
 	public function logout()
 	{
+		$isFromWorkspace = $this->input->get("from_workspace") ? $this->input->get("from_workspace") == "1" : false;
 		$modul  = $this->config->item("modul_application");
 		// $ses 	= $this->session->userdata($modul);
 
 		$this->session->unset_userdata($modul);
-		redirect(base_url() . "login");
+		if ($isFromWorkspace) {
+			return $this->login_from_workspace();
+		} else {
+			$this->session->set_flashdata("message", "Logout Berhasil");
+			redirect(base_url() . "login");
+		}
 	}
 
 	public function change_pass()
@@ -240,5 +247,31 @@ class Login extends CI_Controller
 		curl_close($ch);
 
 		return json_decode($output, true);
+	}
+
+	public function login_from_workspace()
+	{
+		$modul = $this->config->item("modul_application");
+		$get_user = $this->dbmodels->get_user($_GET["username"]);
+
+		if ($get_user->num_rows() > 0) {
+			$this->session->unset_userdata($modul);
+			$data_user 	= $get_user->row();
+
+			$session_user 	= array(
+				"s_id_user" 	=> $data_user->id_user,
+				"s_username" 	=> $data_user->username,
+				"s_password" 	=> $data_user->password,
+				"s_id_priv" 	=> $data_user->id_priv,
+				"s_nama"		=> $data_user->nama,
+				// "s_kode"		=> $data_user->key,
+				"s_priv"	=> $data_user->priv,
+			);
+
+			$this->session->set_userdata($modul, $session_user);
+			redirect(base_url() . "dashboard");
+		} else {
+			redirect(base_url() . "login");
+		}
 	}
 }

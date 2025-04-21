@@ -27,6 +27,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <div class="menu-inner-shadow"></div>
 
     <ul class="menu-inner py-1">
+        <li class='menu-item nav-menu'>
+            <a class='menu-link ' href='https://simapps-workspace.test/workspace'>
+                <i class='menu-icon tf-icons ti ti-arrow-left'></i>
+                <div data-i18n='Main Menu'>Main Menu</div>
+            </a>
+        </li>
         <?= $menuSideBar; ?>
 
         <!-- <li class="menu-item active open">

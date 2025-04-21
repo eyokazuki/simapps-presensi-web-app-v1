@@ -235,7 +235,7 @@ $ses    = $this->session->userdata($modul);
                             <div class="d-flex">
                                 <div class="flex-shrink-0 me-3">
                                     <div class="avatar avatar-online">
-                                    <img src="https://ui-avatars.com/api/?background=007bff&color=fff&name=<?= $dataUser->nama ?>" alt="avatar" class="h-auto rounded-circle" />
+                                        <img src="https://ui-avatars.com/api/?background=007bff&color=fff&name=<?= $dataUser->nama ?>" alt="avatar" class="h-auto rounded-circle" />
                                     </div>
                                 </div>
                                 <div class="flex-grow-1">
@@ -257,12 +257,12 @@ $ses    = $this->session->userdata($modul);
                     <li>
                         <div class="dropdown-divider"></div>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a class="dropdown-item .logout-modal" href="javascript:void(0)" onclick="tes()">
                             <i class="ti ti-logout me-2 ti-sm"></i>
                             <span class="align-middle">Log Out</span>
                         </a>
-                    </li>
+                    </li> -->
                 </ul>
             </li>
             <!--/ User -->
