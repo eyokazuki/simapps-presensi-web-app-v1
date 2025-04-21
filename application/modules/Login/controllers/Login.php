@@ -17,7 +17,7 @@ class Login extends CI_Controller
 
 	public function index()
 	{
-		return redirect("https://simapps-workspace.test/workspace");
+		return redirect("https://job-simenggaris.com/workspace");
 		// $data 	= $this->auth->getTitle();
 		// $this->load->view('login_v', $data);
 	}
