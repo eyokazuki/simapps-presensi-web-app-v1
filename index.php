@@ -67,6 +67,9 @@ switch ($_SERVER['HTTP_HOST']) {
 	case 'job-simenggaris.com':
 		$env = 'production';
 		break;
+	case 'presensi.job-simenggaris.com':
+		$env = 'production';
+		break;
 	case 'simapps-presensi.test':
 		$env = 'production';
 		break;
